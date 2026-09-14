@@ -20,4 +20,12 @@ export class App {
   changeTitle() {
     this.title.set('The New Title');
   }
+
+  sayHello() {
+    console.log('Howdy!');
+  }
+
+  sayGoodbye() {
+    console.log('Bye :-(');
+  }
 }

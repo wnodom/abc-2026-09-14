@@ -2,4 +2,9 @@
 
 <button (click)="changeTitle()">Change Title</button>
 
+<label
+  >Enter some text:
+  <input type="text" (focus)="sayHello()" (blur)="sayGoodbye()" />
+</label>
+
 <router-outlet />
