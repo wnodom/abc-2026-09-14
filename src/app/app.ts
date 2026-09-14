@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -9,4 +9,15 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('workshop-app');
+
+  constructor() {
+    setTimeout(() => {
+      this.title.set('The Timed Title');
+      console.log('Hey, I changed the title!');
+    }, 5000);
+  }
+
+  changeTitle() {
+    this.title.set('The New Title');
+  }
 }
