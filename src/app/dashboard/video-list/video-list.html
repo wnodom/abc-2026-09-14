@@ -1,1 +1,7 @@
 <p>video-list works!</p>
+
+@for (video of videos(); track video.id) {
+  <p>{{ video.title }} - {{ video.author }}</p>
+}
+
+<!-- <pre>{{ videos() | json }}</pre> -->
