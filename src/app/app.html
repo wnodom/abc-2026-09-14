@@ -2,13 +2,13 @@
 
 <button (click)="changeTitle()">Change Title</button>
 
+<a [routerLink]="'about'">About this app</a>
+
+<a routerLink="help">Please help me</a>
+
 <label
   >Enter some text:
   <input type="text" (focus)="sayHello()" (blur)="sayGoodbye()" />
 </label>
-
-<ns-about />
-
-<ns-help />
 
 <router-outlet />

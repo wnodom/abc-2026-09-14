@@ -6,4 +6,4 @@ import { Component } from '@angular/core';
   styleUrl: './help.scss',
   templateUrl: './help.html',
 })
-export class Help {}
+export default class Help {}
