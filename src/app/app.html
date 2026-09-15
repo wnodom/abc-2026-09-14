@@ -1,14 +1,14 @@
 <h1>{{ title() }}</h1>
 
-<button (click)="changeTitle()">Change Title</button>
-
-<a [routerLink]="'about'">About this app</a>
-
-<a routerLink="help">Please help me</a>
-
-<label
-  >Enter some text:
-  <input type="text" (focus)="sayHello()" (blur)="sayGoodbye()" />
-</label>
+<nav>
+  <ul>
+    <li routerLinkActive="active-link">
+      <a [routerLink]="'about'">About this app</a>
+    </li>
+    <li routerLinkActive="active-link">
+      <a routerLink="help">Please help me</a>
+    </li>
+  </ul>
+</nav>
 
 <router-outlet />
