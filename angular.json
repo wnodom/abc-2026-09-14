@@ -16,7 +16,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "ns",
       "architect": {
         "build": {
           "builder": "@angular/build:application",

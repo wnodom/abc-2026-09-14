@@ -3,7 +3,8 @@
 @use '@picocss/pico/scss/pico';
 
 app-root,
-app-about {
+ns-about,
+ns-help {
   outline: 3px solid yellow;
   margin: 1rem;
   padding: 1rem;
