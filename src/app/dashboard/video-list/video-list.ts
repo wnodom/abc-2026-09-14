@@ -383,6 +383,7 @@ export class VideoList {
 ]`),
   );
 
+  protected readonly showDetails = signal(false);
   constructor() {
     console.table(this.videos());
   }

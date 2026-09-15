@@ -1,7 +1,15 @@
 <p>video-list works!</p>
 
+<button (click)="showDetails.update((v) => !v)">Toggle Details</button>
+
 @for (video of videos(); track video.id) {
-  <p>{{ video.title }} - {{ video.author }}</p>
+  <p>
+    {{ video.title }}
+
+    @if (showDetails()) {
+      - {{ video.author }}
+    }
+  </p>
 }
 
 <!-- <pre>{{ videos() | json }}</pre> -->
