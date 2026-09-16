@@ -1,3 +1,28 @@
-<p>video-player works!</p>
+<header><h3>Video Player</h3></header>
 
-{{ video()?.title }}
+@if (video(); as v) {
+  <iframe
+    width="560"
+    height="315"
+    [src]="videoUrl()"
+    title="YouTube video player"
+    frameborder="0"
+    allow="
+      accelerometer;
+      autoplay;
+      clipboard-write;
+      encrypted-media;
+      gyroscope;
+      picture-in-picture;
+      web-share;
+    "
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen
+  ></iframe>
+
+  <!-- <img
+    [alt]="v.title"
+    [src]="'http://img.youtube.com/vi/' + v.id + '/0.jpg'"
+  /> -->
+  <div>{{ v.title }} - {{ v.author }}</div>
+}
