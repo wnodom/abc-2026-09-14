@@ -1,34 +1,12 @@
-/* eslint-disable @typescript-eslint/consistent-type-definitions */
-
 // import { JsonPipe } from '@angular/common';
 import { UpperCasePipe } from '@angular/common';
-import { Component, effect, signal } from '@angular/core';
+import {
+  Component,
+  // effect,
+  signal,
+} from '@angular/core';
 
-// interface ViewDetail {
-//   age: number;
-//   region: string;
-//   date: string;
-// }
-
-// interface Video {
-//   title: string;
-//   author: string;
-//   id: string;
-//   viewDetails: ViewDetail[];
-// }
-
-type ViewDetail = {
-  age: number;
-  region: string;
-  date: string;
-};
-
-type Video = {
-  title: string;
-  author: string;
-  id: string;
-  viewDetails: ViewDetail[];
-};
+import { Video } from '../../types';
 
 @Component({
   imports: [
