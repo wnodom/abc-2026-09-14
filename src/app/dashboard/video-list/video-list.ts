@@ -1,7 +1,12 @@
+// import { JsonPipe } from '@angular/common';
+import { UpperCasePipe } from '@angular/common';
 import { Component, signal } from '@angular/core';
 
 @Component({
-  imports: [],
+  imports: [
+    UpperCasePipe,
+    //JsonPipe
+  ],
   selector: 'ns-video-list',
   styleUrl: './video-list.scss',
   templateUrl: './video-list.html',

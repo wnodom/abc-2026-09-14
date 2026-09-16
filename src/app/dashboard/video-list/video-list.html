@@ -7,7 +7,7 @@
     {{ video.title }}
 
     @if (showDetails()) {
-      - {{ video.author }}
+      - {{ video.author | uppercase }}
     }
   </p>
 }
