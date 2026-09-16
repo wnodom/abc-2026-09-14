@@ -1,1 +1,5 @@
-{{ video().title }} - {{ video().author }}
+<img
+  [alt]="video().title"
+  [src]="'http://img.youtube.com/vi/' + video().id + '/0.jpg'"
+/>
+<div>{{ video().title }} - {{ video().author }}</div>
