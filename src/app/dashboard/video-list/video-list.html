@@ -15,11 +15,7 @@
     (click)="currentVideo.set(video)"
     [class.highlighted]="video === currentVideo()"
   >
-    {{ video.title }}
-
-    @if (showDetails()) {
-      - {{ video.author | uppercase }}
-    }
+    <ns-video-thumbnail [video]="video" />
   </button>
 }
 
