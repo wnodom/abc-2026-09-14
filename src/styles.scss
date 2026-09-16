@@ -18,3 +18,20 @@ ns-video-player {
   outline: 3px solid green;
   border-radius: 5px;
 }
+
+.highlighted {
+  outline: 3px solid red;
+}
+
+.button-reset {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer; /* Restores the expected pointer indicator */
+  text-align: inherit;
+
+  margin-block-end: 1rem;
+}

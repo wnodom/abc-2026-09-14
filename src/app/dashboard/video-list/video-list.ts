@@ -1,6 +1,6 @@
 // import { JsonPipe } from '@angular/common';
 import { UpperCasePipe } from '@angular/common';
-import { Component, signal } from '@angular/core';
+import { Component, effect, signal } from '@angular/core';
 
 @Component({
   imports: [
@@ -388,8 +388,19 @@ export class VideoList {
 ]`),
   );
 
+  protected readonly currentVideo = signal<any>(undefined);
+
   protected readonly showDetails = signal(false);
+
+  // private videoEffect = effect(() => {
+  //   console.log('Current video is now', this.currentVideo());
+  // });
+
   constructor() {
     console.table(this.videos());
+  }
+
+  rememberSelectedVideo(video: any) {
+    this.currentVideo.set(video);
   }
 }

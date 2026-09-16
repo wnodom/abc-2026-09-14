@@ -1,15 +1,26 @@
 <p>video-list works!</p>
 
-<button (click)="showDetails.update((v) => !v)">Toggle Details</button>
+<!-- This is still just text -->
+
+<button
+  // Do clicky things
+  (click)="showDetails.update((v) => !v)"
+>
+  Toggle Details
+</button>
 
 @for (video of videos(); track video.id) {
-  <p>
+  <button
+    class="button-reset"
+    (click)="rememberSelectedVideo(video)"
+    [class.highlighted]="video === currentVideo()"
+  >
     {{ video.title }}
 
     @if (showDetails()) {
       - {{ video.author | uppercase }}
     }
-  </p>
+  </button>
 }
 
 <!-- <pre>{{ videos() | json }}</pre> -->
