@@ -12,7 +12,7 @@
 @for (video of videos(); track video.id) {
   <button
     class="button-reset"
-    (click)="rememberSelectedVideo(video)"
+    (click)="currentVideo.set(video)"
     [class.highlighted]="video === currentVideo()"
   >
     {{ video.title }}

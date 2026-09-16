@@ -1,6 +1,34 @@
+/* eslint-disable @typescript-eslint/consistent-type-definitions */
+
 // import { JsonPipe } from '@angular/common';
 import { UpperCasePipe } from '@angular/common';
 import { Component, effect, signal } from '@angular/core';
+
+// interface ViewDetail {
+//   age: number;
+//   region: string;
+//   date: string;
+// }
+
+// interface Video {
+//   title: string;
+//   author: string;
+//   id: string;
+//   viewDetails: ViewDetail[];
+// }
+
+type ViewDetail = {
+  age: number;
+  region: string;
+  date: string;
+};
+
+type Video = {
+  title: string;
+  author: string;
+  id: string;
+  viewDetails: ViewDetail[];
+};
 
 @Component({
   imports: [
@@ -12,12 +40,11 @@ import { Component, effect, signal } from '@angular/core';
   templateUrl: './video-list.html',
 })
 export class VideoList {
-  protected readonly videos = signal(
+  protected readonly videos = signal<Video[]>(
     JSON.parse(`
 [
   {
     "title": "A Stellar Census of the Sword of Orion",
-    "author": "NASA Spitzer",
     "id": "yB6NKBh9Q4Y",
     "viewDetails": [
       {
@@ -388,7 +415,7 @@ export class VideoList {
 ]`),
   );
 
-  protected readonly currentVideo = signal<any>(undefined);
+  protected readonly currentVideo = signal<Video | undefined>(undefined);
 
   protected readonly showDetails = signal(false);
 
@@ -398,9 +425,5 @@ export class VideoList {
 
   constructor() {
     console.table(this.videos());
-  }
-
-  rememberSelectedVideo(video: any) {
-    this.currentVideo.set(video);
   }
 }
