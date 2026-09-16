@@ -1,6 +1,7 @@
 // import { JsonPipe } from '@angular/common';
 import {
   Component,
+  output,
   // effect,
   signal,
 } from '@angular/core';
@@ -15,6 +16,8 @@ import { VideoThumbnail } from '../video-thumbnail/video-thumbnail';
   templateUrl: './video-list.html',
 })
 export class VideoList {
+  public readonly videoPicked = output<Video>();
+
   protected readonly videos = signal<Video[]>(
     JSON.parse(`
 [
@@ -400,5 +403,10 @@ export class VideoList {
 
   constructor() {
     console.table(this.videos());
+  }
+
+  rememberSelectedVideo(video: Video) {
+    this.currentVideo.set(video);
+    this.videoPicked.emit(video);
   }
 }

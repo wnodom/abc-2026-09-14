@@ -12,7 +12,7 @@
 @for (video of videos(); track video.id) {
   <button
     class="button-reset"
-    (click)="currentVideo.set(video)"
+    (click)="rememberSelectedVideo(video)"
     [class.highlighted]="video === currentVideo()"
   >
     <ns-video-thumbnail [video]="video" />

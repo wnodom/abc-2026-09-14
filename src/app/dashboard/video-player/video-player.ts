@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { Video } from '../../types';
 
 @Component({
   imports: [],
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './video-player.scss',
   templateUrl: './video-player.html',
 })
-export class VideoPlayer {}
+export class VideoPlayer {
+  public readonly video = input.required<Video | undefined>();
+}
