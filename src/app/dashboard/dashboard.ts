@@ -4,6 +4,8 @@ import { VideoPlayer } from './video-player/video-player';
 import { Video } from '../types';
 import { HttpClient } from '@angular/common/http';
 
+import { toSignal } from '@angular/core/rxjs-interop';
+
 @Component({
   imports: [VideoList, VideoPlayer],
   selector: 'ns-dashboard',
@@ -13,20 +15,18 @@ import { HttpClient } from '@angular/common/http';
 export default class Dashboard {
   protected readonly currentVideo = signal<Video | undefined>(undefined);
 
-  protected readonly videos = signal<Video[]>([]);
+  // private readonly http = inject(HttpClient);
 
-  private readonly http = inject(HttpClient);
+  // protected videos$ = inject(HttpClient).get<Video[]>(
+  //   'https://api.angularbootcamp.com/videos',
+  // );
 
-  private videosObservable = this.http.get<Video[]>(
-    'https://api.angularbootcamp.com/videos',
+  protected readonly videos = toSignal(
+    inject(HttpClient).get<Video[]>(
+      'https://api.angularbootcamp.com/videos',
+    ),
+    { initialValue: [] },
   );
-
-  constructor() {
-    this.videosObservable.subscribe((data) => {
-      console.table(data);
-      this.videos.set(data);
-    });
-  }
 
   tellMeAboutVideo(v: Video) {
     console.log('THE DASHBOARD SAYS...', v);
