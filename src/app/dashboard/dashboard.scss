@@ -4,9 +4,9 @@
   gap: 0.5rem;
 
   grid-template:
-    ' header  header '
-    ' list    player ' /
-    1fr 2fr;
+    ' header  header  header '
+    ' list    player  filters ' /
+    1fr 2fr 1fr;
 }
 
 header {

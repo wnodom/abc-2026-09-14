@@ -1,0 +1,12 @@
+<header><h3>Stat Filters</h3></header>
+
+<form [formGroup]="fg">
+  <label for="partialVideoTitle">Partial Title</label>
+  <input
+    type="text"
+    id="partialVideoTitle"
+    [formControl]="fg.controls.partialVideoTitle"
+  />
+</form>
+
+<pre>{{ fg.valueChanges | async | json }}</pre>

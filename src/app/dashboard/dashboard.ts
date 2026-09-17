@@ -5,9 +5,10 @@ import { Video } from '../types';
 
 import { toSignal } from '@angular/core/rxjs-interop';
 import { VideoDataService } from '../video-data-service';
+import { StatFilters } from '../stat-filters/stat-filters';
 
 @Component({
-  imports: [VideoList, VideoPlayer],
+  imports: [VideoList, VideoPlayer, StatFilters],
   selector: 'ns-dashboard',
   styleUrl: './dashboard.scss',
   templateUrl: './dashboard.html',
