@@ -5,6 +5,7 @@ import {
   output,
   // effect,
   signal,
+  OnInit,
 } from '@angular/core';
 
 import { Video } from '../../types';
@@ -16,7 +17,7 @@ import { VideoThumbnail } from '../video-thumbnail/video-thumbnail';
   styleUrl: './video-list.scss',
   templateUrl: './video-list.html',
 })
-export class VideoList {
+export class VideoList implements OnInit {
   public readonly videoPicked = output<Video>();
 
   public readonly videos = input.required<Video[]>();
@@ -28,6 +29,14 @@ export class VideoList {
   // private videoEffect = effect(() => {
   //   console.log('Current video is now', this.currentVideo());
   // });
+
+  // constructor() {
+  //   console.table(this.videos());
+  // }
+
+  ngOnInit() {
+    console.table(this.videos());
+  }
 
   rememberSelectedVideo(video: Video) {
     this.currentVideo.set(video);
