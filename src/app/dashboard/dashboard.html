@@ -2,6 +2,6 @@
   <h2>Video Dashboard</h2>
 </header>
 
-<ns-video-list (videoPicked)="tellMeAboutVideo($event)" />
+<ns-video-list (videoPicked)="tellMeAboutVideo($event)" [videos]="[]" />
 
 <ns-video-player [video]="currentVideo()" />
